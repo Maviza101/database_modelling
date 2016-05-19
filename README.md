@@ -21,4 +21,8 @@ Here are some queries you can run with respect to the above model:
 
 5. Create table customer_stats that has a foreign key from customer_biodata:
  
-  CREATE TABLE customer_stats (id INT(10) REFERENCES customer_biodata(id), total_expenditure_lastyear INT(10),
+  CREATE TABLE customer_stats (id INT(10) REFERENCES customer_biodata(id), last_annual_expenditure INT(10), average_monthly_expenditure INT(10), largest_amount_spent INT(10), smallest_amount_spent INT(10));
+
+6. Query for all customers, the highest-spending customers first:
+
+  SELECT id, largest_amount_spent FROM customer_stats ORDER BY largest_amount_spent DESC
